@@ -1,0 +1,11 @@
+################
+GRID_SIZE  (number of blocks in grid)
+BLOCK_SIZE (number of threads in block)
+
+
+#############
+
+
+
+
+cudaDeviceSynchronize();  -> wait for all previous operations before using values
