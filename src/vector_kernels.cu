@@ -4,7 +4,7 @@
 #include<math.h>
 
 
-#define vector_size 400000
+#define vector_size 102400
 #define numThreads 1024 // 500 threads in a block
 //#define numBlocks 2  // 2 blocks
 
@@ -15,7 +15,7 @@ void vector_add_kernel(int * a, int * b ,int * result)
     uint32_t ind = blockDim.x * blockIdx.x + threadIdx.x;
 
     if(ind < vector_size)
-        result[ind] = a[ind] * b[ind];
+        result[ind] = a[ind] + b[ind];
 }
 
 

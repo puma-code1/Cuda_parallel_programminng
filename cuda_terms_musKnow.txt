@@ -9,3 +9,24 @@ BLOCK_SIZE (number of threads in block)
 
 
 cudaDeviceSynchronize();  -> wait for all previous operations before using values
+
+
+
+SIMT model
+
+SM
+coalescing read & write from memory!!
+
+
+
+memory model 
+* globla memory all grid
+* local memory - each thread
+* shared memory - memory shared between blocks
+
+
+
+
+
+important functions:
+error_check( parameters...);
