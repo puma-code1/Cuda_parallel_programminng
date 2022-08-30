@@ -2,23 +2,25 @@
 #include <vector_kernels.h>
 #include <auxilliary.h>
 #include <iostream>
+#include <string>
 #include "matrix_kernels.h"
 
-#define IMG_SIZE 460800
- 
+
 
 
 int main () 
 {
-    uint16_t buff_image[230400];
-//    uint16_t test[1000];
-  //  test[0] = 8;
-   // test[1] = 6 ;
-    const char * path = "/home/lab/Desktop/Eliran/kaya-tutorial/Frame number_0.raw";
-    //const char * file_name  = "data";
-    // load an image test
-    load_img(path, buff_image, IMG_SIZE);
-    save_image_raw(buff_image, "test_output", "input" , IMG_SIZE/2 );
+    PIXEL_TYPE buff_image[230400];
+    bool status = false;
+
+    std::string load_file_path = "/home/lab/Desktop/Eliran/kaya-tutorial/Frame number_0.raw";
+    std::string save_file_path_name = "/home/lab/Desktop/Eliran/test_data_function";
+  status = save_image(buff_image, save_file_path_name, file_type::txt , IMG_SIZE_BYTES,IMG_WIDTH) ;
+
+  if(!status)
+  {
+      std::cout<<"save file function failed!\n";
+  }
     /* 
     for(int i =0; i< 1000; i++)
     {
@@ -27,9 +29,7 @@ int main ()
         std::cout<<test[0];
     }
 */
-   
 
-    save_image_raw(buff_image, "test_output", "output" , IMG_SIZE/2 );
   //  run_vector_add_kernel();
    run_travese_threshold_matrix_kernel( buff_image, 50, 230400);
 

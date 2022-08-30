@@ -30,8 +30,8 @@ set(CMAKE_BUILD_TYPE Debug)
 
 #link_directories(${CMAKE_SOURCE_DIR}/lib)
 
-set (CUDA_INC_PTH /usr/local/cuda-11.6/targets/x86_64-linux/include)
-set(HEADERS  ./inc/vector_kernels.h ./inc/matrix_kernels.h ./inc/auxilliary.h ${CUDA_INC_PTH}/cuda.h ${CUDA_INC_PTH}/cuda_runtime_api.h)
+#set (CUDA_INC_PTH /usr/local/cuda-11.6/targets/x86_64-linux/include)
+set(HEADERS  ./inc/vector_kernels.h ./inc/matrix_kernels.h ./inc/auxilliary.h )
 set(SRC ./src/main.cu ./src/vector_kernels.cu ./src/matrix_kernels.cu src/auxilliary.cpp)#./src/main.cpp ) #./src/KYFGLib_Example.c ./src/stdafx.c)
 include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_SOURCE_DIR}/inc /usr/local/cuda-11.6/targets/x86_64-linux/include)
 #add library
